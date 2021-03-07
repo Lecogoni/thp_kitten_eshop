@@ -46,7 +46,24 @@ works with Postgres
 * ...
 
 
------------ compte existant pour test --------------------------------
-nico
+----------- compte existant pour test en heroku --------------------------------
+
 nico@nico.fr
 123456
+
+--------------------------------
+
+alex
+alex@alex.fr  
+123456
+
+# nico comment 
+
+=> manque la column photo a la db:product
+=> attention a ne pas afficher n'importe ou les fonctions create / edit / destroy des Product
+=> ajout un regex pour validation du format User > username
+
+# edouard comment 
+
+
+# alex comment
