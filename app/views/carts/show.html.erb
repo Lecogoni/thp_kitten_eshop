@@ -3,6 +3,19 @@
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
 
+<div>
+<ul>
+<% @cart.line_items.each do |item|  %>
+  <li><%= item.product.title%> - <%= item.quantity%></li>
+
+<% end %>
+
+
+</ul>
+
+
+</div>
+
 
 <div>
   <%= button_to 'Empty cart', @cart, method: :delete, data: {confirm: "Are you sure ?"}, class: ""%>
@@ -11,4 +24,13 @@
 <div>
   <h4>Total: </h4>
   <%= number_to_currency(@cart.total_price) %>
+</div>
+
+<div>
+
+  <p>
+      <span>is user sign in : <%= user_signed_in? %></span><br>
+     <span>current_user is <%= current_user %></span><br>
+    <span>user_session is <%= user_session %></span>
+  </p>
 </div>

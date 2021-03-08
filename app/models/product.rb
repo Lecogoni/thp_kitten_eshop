@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :title, :description, :price, :format, presence: true
   validates :title, length: {maximum: 140}
   validates :description, length: {maximum: 1000}
-  validates :price, numericality: {only_integer: true}
+
   
   #const pour :format des Product
   FORMAT = %w{png gif jpg}

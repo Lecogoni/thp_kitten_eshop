@@ -5,6 +5,12 @@
   The time is now: <%= Time.now %>
 </p>
 
+<p>
+  <span>is user sign in : <%= user_signed_in? %></span><br>
+  <span>current_user is <%= current_user %></span><br>
+  <span>user_session is <%= user_session %></span>
+  
+</p>
 
 <% if user_signed_in? %>
   <p>
