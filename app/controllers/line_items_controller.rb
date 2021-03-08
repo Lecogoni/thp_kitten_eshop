@@ -1,5 +1,8 @@
 class LineItemsController < ApplicationController
+  
+  include CurrentCart
   before_action :set_line_item, only: %i[ show edit update destroy ]
+  before_action :set_cart, only: %i[create]
 
   # GET /line_items or /line_items.json
   def index
@@ -21,11 +24,12 @@ class LineItemsController < ApplicationController
 
   # POST /line_items or /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    product = Product.find(params[:product_id])
+    @line_item = @cart.add_product(product)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item, notice: "Line item was successfully created." }
+        format.html { redirect_to @line_item, notice: "item successfully added to cart." }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -49,9 +53,10 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
+    @cart = Cart.find(session[:cart_id])
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: "Line item was successfully destroyed." }
+      format.html { redirect_to cart_path(@cart), notice: "Line item was successfully destroyed." }
       format.json { head :no_content }
     end
   end

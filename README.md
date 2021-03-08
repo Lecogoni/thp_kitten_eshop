@@ -45,7 +45,7 @@ works with Postgres
 
 * ...
 
-
+  
 ----------- compte existant pour test en heroku --------------------------------
 
 nico@nico.fr
@@ -59,6 +59,7 @@ alex@alex.fr
 
 # nico comment 
 
+=> le total price dans card n'est pas décimal, ni exact 
 => manque la column photo a la db:product
 => attention a ne pas afficher n'importe ou les fonctions create / edit / destroy des Product
 => ajout un regex pour validation du format User > username
