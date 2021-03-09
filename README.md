@@ -59,7 +59,8 @@ alex@alex.fr
 
 # nico comment 
 
-=> le total price dans card n'est pas décimal, ni exact 
+=> le total price dans card n'est pas décimal, ni exact
+=> column user_id dans cart est inutile
 => manque la column photo a la db:product
 => attention a ne pas afficher n'importe ou les fonctions create / edit / destroy des Product
 => ajout un regex pour validation du format User > username
