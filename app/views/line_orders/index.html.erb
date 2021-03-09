@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Line Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_orders.each do |line_order| %>
+      <tr>
+        <td><%= link_to 'Show', line_order %></td>
+        <td><%= link_to 'Edit', edit_line_order_path(line_order) %></td>
+        <td><%= link_to 'Destroy', line_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line Order', new_line_order_path %>

@@ -2,6 +2,7 @@ class Product < ApplicationRecord
 
   before_destroy :not_referenced_by_any_line_item
   has_many :line_items
+  has_many :line_orders
   
   validates :title, :description, :price, :format, presence: true
   validates :title, length: {maximum: 140}
