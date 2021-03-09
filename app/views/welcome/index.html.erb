@@ -2,27 +2,32 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 <h2>Hello World</h2>
 <p>
-  The time is now: <%= Time.now %>
+  The time is now : <%= Time.now %>
 </p>
 
 <p>
   <span>is user sign in : <%= user_signed_in? %></span><br>
-  <span>current_user is <%= current_user %></span><br>
+  <span>current_user is : <%= current_user %></span><br>
 
   <% if user_signed_in? == true %>
-    <span>current_user.email is <%= current_user.email %></span><br>
-    <span>current_user.id is <%= current_user.id %></span><br><br>
+    <span>current_user.email is : <%= current_user.email %></span><br>
+    <span>current_user.id is : <%= current_user.id %></span><br><br>
+
+    <span>@cart is : <%= @cart %></span><br>
+    <span>@cart.id is : <%= @cart.id %></span><br><br>
+    <span>@cart.user_id is : <%= @cart.user_id %></span><br>
+
+
   <% end %>
 
-  <span>session is <%= session %></span><br>
-  <span>user_session is <%= user_session %></span><br><br>
+  <span>session is : <%= session %></span><br>
+  <span>user_session is : <%= user_session %></span><br><br>
 
-  <span>session[:cart_id] is <%= session[:cart_id] %></span><br><br>
+  <span>session[:cart_id] is : <%= session[:cart_id] %></span><br><br>
 
 
 
-  <span>@cart is <%= @cart %></span><br>
-  <span>@cart.id is <%= @cart.id %></span><br>
+  
   
 </p>
 
