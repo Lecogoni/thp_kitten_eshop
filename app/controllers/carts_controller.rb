@@ -51,6 +51,7 @@ class CartsController < ApplicationController
   # DELETE
   def destroy
 
+
       @cart_items = []
       @cart_items = @cart.line_items
     
@@ -86,4 +87,5 @@ class CartsController < ApplicationController
       logger.error "attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "that cart doesn't exist"
     end
+
 end

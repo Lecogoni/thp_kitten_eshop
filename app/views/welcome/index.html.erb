@@ -58,7 +58,7 @@
 
   <% @my_orders.each do |order| %>
     <ul>
-      <li><%= order.id %> - <%= order.created_at%></li>
+      <li><%= order.id %> - <%= order.created_at%> - total : <%= number_to_currency(@cart.total_price) %></li>
       <% @order_lineOrder = order.line_orders %>
       <% @order_lineOrder.each do |lineOrder| %>
         <ul>

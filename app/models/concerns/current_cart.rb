@@ -2,8 +2,6 @@ module CurrentCart
 
   private
 
-
-
   def set_cart
     if user_signed_in? == false
       @card == nil 
