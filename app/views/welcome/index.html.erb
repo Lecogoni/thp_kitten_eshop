@@ -8,7 +8,21 @@
 <p>
   <span>is user sign in : <%= user_signed_in? %></span><br>
   <span>current_user is <%= current_user %></span><br>
-  <span>user_session is <%= user_session %></span>
+
+  <% if user_signed_in? == true %>
+    <span>current_user.email is <%= current_user.email %></span><br>
+    <span>current_user.id is <%= current_user.id %></span><br><br>
+  <% end %>
+
+  <span>session is <%= session %></span><br>
+  <span>user_session is <%= user_session %></span><br><br>
+
+  <span>session[:cart_id] is <%= session[:cart_id] %></span><br><br>
+
+
+
+  <span>@cart is <%= @cart %></span><br>
+  <span>@cart.id is <%= @cart.id %></span><br>
   
 </p>
 

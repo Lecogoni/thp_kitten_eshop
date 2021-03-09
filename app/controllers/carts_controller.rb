@@ -50,6 +50,14 @@ class CartsController < ApplicationController
 
   # DELETE /carts/1 or /carts/1.json
   def destroy
+
+    puts "--------------------------"
+    userId = current_user.id
+    
+    puts userId
+
+    puts "--------------------------"
+
     @cart.destroy if @cart.id == session[:cart_id]
     session[:card_id] = nil
     respond_to do |format|
