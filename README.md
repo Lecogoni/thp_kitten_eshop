@@ -61,6 +61,7 @@ alex@alex.fr
 
 # nico comment 
 
+=> changer le message d'alert de delete Cart en qqch plus genre command valider 
 => le total price dans card n'est pas décimal, ni exact
 => column user_id dans cart est inutile
 => manque la column photo a la db:product

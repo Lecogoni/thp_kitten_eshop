@@ -48,6 +48,7 @@ class LineItemsController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        
       end
     end
   end
