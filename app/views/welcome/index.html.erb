@@ -15,9 +15,13 @@
 
     <span>@cart is : <%= @cart %></span><br>
     <span>@cart.id is : <%= @cart.id %></span><br><br>
-    <span>@cart.user_id is : <%= @cart.user_id %></span><br>
+    <span>@cart.user_id is : <%= @cart.user_id %></span><br><br>
+
+    <span>current_user is admin: <%= current_user.admin == true %></span><br><br><br>
 
   <% end %>
+
+  
 
   <span>session is : <%= session %></span><br>
   <span>user_session is : <%= user_session %></span><br><br>
