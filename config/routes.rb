@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/show'
   resources :line_items
   resources :carts
   resources :products

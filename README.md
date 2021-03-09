@@ -14,7 +14,9 @@ To log_in user - in login field - can enter either its username OR email
 
 
 --------------------------------
-
+Theme Bootswatch
+https://bootswatch.com/journal/
+--------------------------------
 
 * Ruby version
 
