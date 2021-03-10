@@ -14,8 +14,21 @@ To log_in user - in login field - can enter either its username OR email
 
 
 --------------------------------
-Theme Bootswatch
+
+Bootswatch --> Finalement pas utilisé  
 https://bootswatch.com/journal/
+
+--------------------------------
+
+Utilisation d'un thème existant 
+https://startbootstrap.com/previews/modern-business
+
+--------------------------------
+
+Pour insérer du CSS (général): 
+--> Aller dans app/assets/main.css
+(Si vous voulez mettre du css pour un éléménnt précis (navbar/footer/header/form etc..)me demander car il faut créer un autre fichier spécifique et le lier dans le manifeste application.css)
+
 --------------------------------
 
 * Ruby version
