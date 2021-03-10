@@ -9,6 +9,14 @@ class Product < ApplicationRecord
   validates :description, length: {maximum: 1000}
 
   
+
+  after_create :test_email_jet
+
+  def test_email_jet
+    UserMailer.mailjet_email(self).deliver_now
+  end
+
+
   #const pour :format des Product
   FORMAT = %w{png gif jpg}
 
