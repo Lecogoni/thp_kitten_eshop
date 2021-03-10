@@ -12,8 +12,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
+  after_create :welcome_send
   
+  # envoi un email post create user via lk'action mailer affichage local gem letter_opener
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
   # permet d'ajouter username dans les conditions de log in
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup 

@@ -30,6 +30,7 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
+gem "letter_opener"
 
 * Configuration
 

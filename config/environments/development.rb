@@ -14,6 +14,10 @@ Rails.application.configure do
   # gem Devise config - mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Setup pour Action Maile et gem Letter_opener.
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
