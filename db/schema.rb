@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2021_03_09_180512) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "carts", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
   add_foreign_key "line_orders", "orders"

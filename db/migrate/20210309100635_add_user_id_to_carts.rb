@@ -1,5 +1,5 @@
 class AddUserIdToCarts < ActiveRecord::Migration[6.1]
   def change
-    t.belongs_to :cart, index: true
+    add_reference :carts, :user, index: true  
   end
 end
