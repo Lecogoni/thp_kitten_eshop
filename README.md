@@ -83,8 +83,18 @@ alex@alex.fr
 => attention a ne pas afficher n'importe ou les fonctions create / edit / destroy des Product
 => ajout un regex pour validation du format User > username
 
+https://dev.mailjet.com/email/guides/getting-started/#send-your-first-email
+https://dev.mailjet.com/email/reference/overview/errors/
+
 # edouard comment 
 
 
 # alex comment
 on va y arriver!
+
+
+rails db:{drop,migrate,seed}&&rails s
+
+rake db:drop
+rails db:create
+rails db:migrate
