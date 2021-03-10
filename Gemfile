@@ -8,7 +8,7 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
-
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
