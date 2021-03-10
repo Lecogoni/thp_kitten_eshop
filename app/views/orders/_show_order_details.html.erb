@@ -1,0 +1,16 @@
+<div class="card p-5" id="email-chosen">
+    <h5 class="card-title">date : <%= @order.created_at %></h5>
+    <h6 class="card-title">by : <%= @order.user.username %> - <%= @order.user.email %></h6>
+    <% @order_items = [] %>
+    <% @order_items = @order.line_orders %>
+
+    <p class="card-text">
+      <ul>
+        <% @order_items.each do |item| %>
+          <li><%= item.product.title %> x <%= item.quantity %></li>
+        <% end %>
+      </ul>
+    </p> 
+
+    
+  </div>

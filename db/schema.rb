@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_100635) do
+ActiveRecord::Schema.define(version: 2021_03_09_180512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 2021_03_09_100635) do
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
+  create_table "line_orders", force: :cascade do |t|
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity"
+    t.index ["order_id"], name: "index_line_orders_on_order_id"
+    t.index ["product_id"], name: "index_line_orders_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.decimal "total_price"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -51,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_100635) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -59,4 +78,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_100635) do
   add_foreign_key "carts", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
+  add_foreign_key "line_orders", "orders"
+  add_foreign_key "line_orders", "products"
+  add_foreign_key "orders", "users"
 end

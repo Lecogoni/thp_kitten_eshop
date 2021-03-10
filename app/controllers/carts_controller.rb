@@ -48,18 +48,24 @@ class CartsController < ApplicationController
     end
   end
 
-  # DELETE /carts/1 or /carts/1.json
+  # DELETE
   def destroy
 
-    puts "--------------------------"
-    userId = current_user.id
+
+      @cart_items = []
+      @cart_items = @cart.line_items
     
-    puts userId
+      @new_order = Order.new(user_id: current_user.id)
+      @new_order.save
 
-    puts "--------------------------"
+      @cart_items.each do |item|
+        @new_line_order = LineOrder.new(order_id: @new_order.id, product_id: item.product_id, quantity: item.quantity)
+        @new_line_order.save
+      end
 
-    @cart.destroy if @cart.id == session[:cart_id]
-    session[:card_id] = nil
+
+    @cart.destroy
+
     respond_to do |format|
       format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
       format.json { head :no_content }
@@ -81,4 +87,5 @@ class CartsController < ApplicationController
       logger.error "attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "that cart doesn't exist"
     end
+
 end

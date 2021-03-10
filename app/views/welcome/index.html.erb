@@ -15,8 +15,9 @@
 
     <span>@cart is : <%= @cart %></span><br>
     <span>@cart.id is : <%= @cart.id %></span><br><br>
-    <span>@cart.user_id is : <%= @cart.user_id %></span><br>
+    <span>@cart.user_id is : <%= @cart.user_id %></span><br><br>
 
+    <span>current_user is admin: <%= current_user.admin == true %></span><br><br><br>
 
   <% end %>
 
@@ -25,11 +26,8 @@
 
   <span>session[:cart_id] is : <%= session[:cart_id] %></span><br><br>
 
-
-
-  
-  
 </p>
+
 
 <% if user_signed_in? %>
   <p>
@@ -39,6 +37,41 @@
   <p>
    <%= link_to 'se connecter', new_user_session_path %>
   </p>
+<% end %>
+
+<% if user_signed_in? %>
+  <hr>
+  <h3>Current_cart</h3>
+
+  <% @actual_cart = Cart.find_by(id: current_user.id) %>
+
+  <% @actual_lineItem = @actual_cart.line_items %>
+
+  <% @actual_lineItem.each do |lineItem| %>
+    <ul>
+      <li><%= lineItem.product.title %></li>
+    </ul>
+
+  <% end %>
+  <hr>
+  <h3>My Orders</h3>
+
+  <% @my_orders = current_user.orders %>
+
+  <% @my_orders.each do |order| %>
+    <ul>
+      <li><%= order.id %> - <%= order.created_at%> - total : <%= number_to_currency(@cart.total_price) %></li>
+      <% @order_lineOrder = order.line_orders %>
+      <% @order_lineOrder.each do |lineOrder| %>
+        <ul>
+          <li><%= lineOrder.product.title %> - <%= lineOrder.quantity%></li>
+        </ul>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+  <hr>
 <% end %>
 
 <%= debug user_signed_in? %>

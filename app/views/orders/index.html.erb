@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Username</td>
+      <td>Datetime</td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.user.username %></td>
+        <td><%= order.created_at %></td>
+        <td><%=  %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr>
+
+<div class="container">
+      <div class="row">
+
+        <div class="col-md-5">
+          <h1>Orders</h1>
+          <ul id="my-order">
+          <h5>Date - Username</h5>
+            <% @orders.each do |order| %>
+              <li id="order<%= order.id %>">
+                <%= link_to order.created_at, order_path(order), remote: true %> - by <%= order.user.username %>
+              </li>
+            <% end %>
+          </ul>    
+        </div>
+
+        <div class="col-md-7">
+          <h1>Orders details</h1>
+          <div id="order-show">
+
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+
+<hr>
+
+<%= link_to 'New Order', new_order_path %>
