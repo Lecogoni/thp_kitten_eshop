@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 
-  before_destroy :not_referenced_by_any_line_item
+
   has_many :line_items
   has_many :line_orders
   
@@ -21,13 +21,5 @@ class Product < ApplicationRecord
   #const pour :format des Product
   FORMAT = %w{png gif jpg}
 
-  private
-
-  def not_referenced_by_any_line_item
-    unless line_item.empty?
-      errors.add(:base, "line items present")
-      throw :abort
-    end
-  end
 
 end
