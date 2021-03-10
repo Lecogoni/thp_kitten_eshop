@@ -14,6 +14,24 @@ Rails.application.configure do
   # gem Devise config - mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  # Setup pour ActionMailer et gem Letter_opener / Mailjet
+
+  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :mailjet_api
+
+  # config.action_mailer.delivery_method = :smtp
+
+  # ActionMailer::Base.smtp_settings = {
+  #   :name => "a9946574b1769f1d160b435f073a5f34", 
+  #   :password => "3833515619f73c0140bb0d93edb5b1e7",
+  #   :address => 'in-v3.mailjet.com',
+  #   :port => 587,
+  #   :authentification => :plain,
+  #   :enable_starttls_auto => true
+  # }
+
+  config.action_mailer.perform_deliveries = true
+
   # Show full error reports.
   config.consider_all_requests_local = true
 

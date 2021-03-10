@@ -43,6 +43,8 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
+gem "letter_opener"
+gem 'mailjet'
 
 * Configuration
 
