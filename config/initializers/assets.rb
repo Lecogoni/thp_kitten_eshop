@@ -17,3 +17,7 @@ Rails.application.config.assets.paths << Rails.root.join("lib", "assets", "style
 Rails.application.config.assets.paths << Rails.root.join("lib", "assets", "javascripts")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
+
+
+# require jquery
+# require bootstrap
