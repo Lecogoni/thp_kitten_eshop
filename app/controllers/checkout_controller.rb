@@ -5,7 +5,7 @@ class CheckoutController < ApplicationController
     @cart = @cart
     @items = @cart.line_items.to_a
    
-    @total = 5 #params[:total].to_d
+    @total = 0.5 #params[:total].to_d
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
