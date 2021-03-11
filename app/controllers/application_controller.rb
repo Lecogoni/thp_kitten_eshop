@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
 
+  # french idioma
+  before_action do
+    I18n.locale = :fr
+  end
+
   include CurrentCart
 
   before_action :configure_devise_parameters, if: :devise_controller?
