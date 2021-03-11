@@ -30,14 +30,14 @@
 </div>
 
 
-<%= button_to 'Add to cart', line_items_path(product_id: @product) %>
 
-<%= link_to 'Passer la commande (LEGACY)',
-new_payment_path(12), class: "btn btn-primary"%>
+<% if @cart.total_price >= 0 %>
 
-<%= link_to 'Passer la commande (NEXT GEN)',
-checkout_create_path(12), class: "btn btn-primary", remote: true %>
 
+  <%= link_to 'Passer la commande (NEXT GEN)',
+  checkout_create_path(total: @total_price), class: "btn btn-primary", remote: true %>
+
+<% end %>
 
 <div>
 
