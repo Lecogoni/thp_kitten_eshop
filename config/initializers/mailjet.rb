@@ -5,8 +5,8 @@ require 'mailjet'
 Dotenv.load
 
 Mailjet.configure do |config|
-  config.api_key = ENV["MJ_APIKEY_PUBLIC"]
-  config.secret_key = ENV["MJ_APIKEY_PRIVATE"]
+  config.api_key = ENV['MJ_APIKEY_PUBLIC'],
+  config.secret_key = ENV['MJ_APIKEY_PRIVATE']
   config.default_from = 'giraud.nicolas@me.com'
   # Mailjet API v3.1 is at the moment limited to Send API.
   # We’ve not set the version to it directly since there is no other endpoint in that version.
