@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
+
+
+  resources :checkouts  
+
   scope '/checkout' do 
     post 'create', to: 'checkout#create', as: 'checkout_create'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'

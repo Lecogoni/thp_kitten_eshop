@@ -1,8 +1,11 @@
 class CheckoutController < ApplicationController
 
   def create
+    puts "----------"
+    puts "ok"
+    puts "----------"
     @user = current_user
-    @total = params[:total].to_d
+    @total = 5 #params[:total].to_d
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
@@ -26,12 +29,10 @@ class CheckoutController < ApplicationController
     end
 
     def cancel
-      @session = Stripe::Checkout::Session.retrieve
-      @payment_intent = Stripe::PaymentIntent.retrieve
+      @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+      @payment_intent = Stripe::PaymentIntent.retrieve(params[:session_id])
     end
 
   end
   
-
-
 end
