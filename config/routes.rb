@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :products
   devise_for :users
   get 'welcome/index'
-  root 'welcome#index'
+  root 'products#index'
 
 
 

@@ -2,15 +2,15 @@
 listOrder  = document.querySelectorAll('#my-order > *');
 thisOrder = document.querySelector("#order" + <%= @order.id %>);
 
-listOrder.forEach(n => n.classList.remove("btn-warning"));
+listOrder.forEach(n => n.classList.remove("btn-danger"));
 
 orderContent = document.getElementById("order-show");
 
 if (orderContent.childElementCount == 0){
   orderContent.insertAdjacentHTML("beforeend", "<%= j render 'show_order_details', order: @order %>");
-  thisOrder.classList.add("btn-warning");
+  thisOrder.classList.add("btn-danger");
 } else {
   orderContent.removeChild(orderContent.childNodes[1]); 
   orderContent.insertAdjacentHTML("beforeend", "<%= j render 'show_order_details', order: @order %>");
-  thisOrder.classList.add("btn-warning");
+  thisOrder.classList.add("btn-danger");
 };

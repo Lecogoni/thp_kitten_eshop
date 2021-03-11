@@ -6,6 +6,7 @@
 
     <p class="card-text">
       <ul>
+        <p>items :</p>
         <% @order_items.each do |item| %>
           <li><%= item.product.title %> x <%= item.quantity %></li>
         <% end %>

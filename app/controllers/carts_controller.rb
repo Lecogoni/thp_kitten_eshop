@@ -51,22 +51,22 @@ class CartsController < ApplicationController
   # DELETE
   def destroy
     
-      @cart_items = []
-      @cart_items = @cart.line_items
+      # @cart_items = []
+      # @cart_items = @cart.line_items
     
-      @new_order = Order.new(user_id: current_user.id)
-      @new_order.save
+      # @new_order = Order.new(user_id: current_user.id)
+      # @new_order.save
 
-      @cart_items.each do |item|
-        @new_line_order = LineOrder.new(order_id: @new_order.id, product_id: item.product_id, quantity: item.quantity)
-        @new_line_order.save
-      end
+      # @cart_items.each do |item|
+      #   @new_line_order = LineOrder.new(order_id: @new_order.id, product_id: item.product_id, quantity: item.quantity)
+      #   @new_line_order.save
+      # end
 
 
     @cart.destroy
 
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Cart was successfully destroyed." }
       format.json { head :no_content }
     end
   end
