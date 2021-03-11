@@ -5,23 +5,18 @@
   <h1 class="my-4">Welcome to the Kittens Business</h1>
 
   <div class="row">
-
     <% @products.each do |product| %>
-
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-        <img class="card-img-top" style="width:400px; height:auto" <%= link_to image_tag(product.avatar, style:'width:100%'), product %>
-
-
+          <img class="card-img-top" style="width:400px; height:auto" <%= link_to image_tag(product.avatar, style:'width:100%'), product %>
           <div class="card-body">
-            <h4 class="card-title">
-              <a> <%= link_to product.title, product %></a>
-            </h4>
+            <h4 class="card-title"><a> <%= link_to product.title, product %></a></h4>
             <p class="card-text"><strong>Description : </strong><%= product.description %></p>
             <p class="card-text"><strong>Format : </strong> <%= product.format %></p>
-              <p class="card-text"><%= product.price %>€</p>
+            <p class="card-text"><%= product.price %>€</p>
           </div>
         </div>
+      </div>
     <% end %>
   </div>
   <%= link_to 'New Product', new_product_path %>

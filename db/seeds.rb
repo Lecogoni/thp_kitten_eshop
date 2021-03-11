@@ -15,7 +15,7 @@ Product.destroy_all
 Cart.destroy_all
 LineOrder.destroy_all
 
-10.times do |id|
+20.times do |id|
   product = Product.create(title: Faker::Superhero.name, description: Faker::Lorem.sentence(word_count: 10), price: Faker::Number.decimal(l_digits: 2), format: 'jpg', image_url: "chaton_#{id}.jpg")
 end
 
