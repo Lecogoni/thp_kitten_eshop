@@ -1,10 +1,10 @@
 class CheckoutController < ApplicationController
 
   def create
-    puts "----------"
-    puts "ok"
-    puts "----------"
-    @user = current_user
+
+    @cart = @cart
+    @items = @cart.line_items.to_a
+   
     @total = 5 #params[:total].to_d
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -26,11 +26,30 @@ class CheckoutController < ApplicationController
     def success
       @session = Stripe::Checkout::Session.retrieve(params[:session_id])
       @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
-    end
 
-    def cancel
-      @session = Stripe::Checkout::Session.retrieve(params[:session_id])
-      @payment_intent = Stripe::PaymentIntent.retrieve(params[:session_id])
+      @new_order = Order.new(user_id: current_user.id)
+      @new_order.save
+
+      @cart = @cart
+      @items = @cart.line_items.to_a
+      
+      @items.each do |item|
+        @new_line_order = LineOrder.new(order_id: @new_order.id, product_id: item.product_id, quantity: item.quantity)
+        @new_line_order.save
+      end
+
+      @cart.destroy
+
+      respond_to do |format|
+        format.html { redirect_to carts_url, notice: "Your payment is ok ! Maiouuu !!!" }
+        format.json { head :no_content }
+      end
+      
+      def cancel
+        @session = Stripe::Checkout::Session.retrieve(params[:session_id])
+        @payment_intent = Stripe::PaymentIntent.retrieve(params[:session_id])
+      end
+
     end
 
   end

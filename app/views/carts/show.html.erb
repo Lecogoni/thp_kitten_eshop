@@ -30,15 +30,20 @@
 </div>
 
 
-
 <% if @cart.total_price >= 0 %>
 
   <%= link_to 'Passer la commande (NEXT GEN)',
-  checkout_create_path(total: @total_price), method: :post, class: "btn btn-primary", remote: true %>
+  checkout_create_path(total: @total_price, cart: @cart, cart_item: @cart.line_items), method: :post, class: "btn btn-primary", remote: true %>
 
 <% end %>
 
 <div>
+
+<%= @here = @cart.line_items%>
+<p><%= @here.class %></p>
+<% @here.each do |item| %>
+<p><%= item %></p>
+<% end %>
 
   <p>
       <span>is user sign in : <%= user_signed_in? %></span><br>

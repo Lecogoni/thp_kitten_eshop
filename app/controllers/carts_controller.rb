@@ -50,8 +50,7 @@ class CartsController < ApplicationController
 
   # DELETE
   def destroy
-
-
+    
       @cart_items = []
       @cart_items = @cart.line_items
     
