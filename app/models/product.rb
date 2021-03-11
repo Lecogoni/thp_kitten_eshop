@@ -9,12 +9,12 @@ class Product < ApplicationRecord
   validates :description, length: {maximum: 1000}
 
 
-  after_create :test_email_jet
+  # after_create :test_email_jet
 
 
-  def test_email_jet
-    UserMailer.mailjet_email(self).deliver_now
-  end
+  # def test_email_jet
+  #   UserMailer.mailjet_email(self).deliver_now
+  # end
 
 
 
