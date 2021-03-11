@@ -12,14 +12,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  after_create :welcome_send
+  #after_create :welcome_send
   #after_create :welcome_send_v2
 
   
   # envoi un email post create user via lk'action mailer affichage local gem letter_opener
-  def welcome_send
-    UserMailer.welcome_email(self).deliver_now
-  end
+  # def welcome_send
+  #   UserMailer.welcome_email(self).deliver_now
+  # end
 
   # def welcome_send_v2
   #   Mailjet::Send.create(messages: [{
