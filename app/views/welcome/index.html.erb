@@ -5,12 +5,6 @@
   The time is now : <%= Time.now %>
 </p>
 
-<div>
-<p>
-<%= link_to "VOIR MON PANIER", {controller: "carts", action: "show", id: current_user.id} %>
-</p>
-</div>
-
 <p>
   <span>is user sign in : <%= user_signed_in? %></span><br>
   <span>current_user is : <%= current_user %></span><br>
