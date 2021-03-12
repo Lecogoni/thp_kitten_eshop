@@ -1,35 +1,33 @@
 # README
 
-# heroku app
+Bienvenue sur le kitten-eshop de Alex, Edouard et Nicolas. 
+
+Pour connecter 
+- soit consulter en http://localhost:3000/ dans votre navigateur après avoir executer les command suivant
+- ou bien se rendre directement à l'URL ci dessous :
+
+# kitten-eshop online avec heroku
 
 https://kitten-eshop.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 # Use Kitten-Shop
 
-To sign_up (register) should enter : username, email, password, password_confirmation
-To log_in user - in login field - can enter either its username OR email 
+To sign_up (register) should enter : username, email, password and password_confirmation
+To log_in user - in login field - can enter either its username OR email AND password
 
+Connect with a preregister user :
 
---------------------------------
+username : bobo_0
+password : 123456
 
-Bootswatch --> Finalement pas utilisé  
-https://bootswatch.com/journal/
+# connect as admin user
 
---------------------------------
-
-Utilisation d'un thème existant 
-https://startbootstrap.com/previews/modern-business
-
---------------------------------
-
-Pour insérer du CSS (général): 
---> Aller dans app/assets/main.css
-(Si vous voulez mettre du css pour un éléménnt précis (navbar/footer/header/form etc..)me demander car il faut créer un autre fichier spécifique et le lier dans le manifeste application.css)
+username : admin
+password : 123456
 
 --------------------------------
+
+# app info 
 
 * Ruby version
 
@@ -56,45 +54,27 @@ works with Postgres
 
 * How to run the test suite
 
+- access local app => run : rails db:{drop,migrate,seed}&&rails s
+
+- payment
+
+# info CB pour test Stripe
+https://stripe.com/docs/checkout/integration-builder
+https://stripe.com/docs/testing
+
+Payment succeeds
+4242 4242 4242 4242
+
+Payment requires authentication
+4000 0025 0000 3155
+
+Payment is declined
+4000 0000 0000 9995
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
 * ...
 
-  
------------ compte existant pour test en heroku --------------------------------
 
-nico@nico.fr
-123456
-
---------------------------------
-
-alex
-alex@alex.fr  
-123456
-
-# nico comment 
-
-=> changer le message d'alert de delete Cart en qqch plus genre command valider 
-=> le total price dans card n'est pas décimal, ni exact
-=> column user_id dans cart est inutile
-=> manque la column photo a la db:product
-=> attention a ne pas afficher n'importe ou les fonctions create / edit / destroy des Product
-=> ajout un regex pour validation du format User > username
-
-https://dev.mailjet.com/email/guides/getting-started/#send-your-first-email
-https://dev.mailjet.com/email/reference/overview/errors/
-
-# edouard comment 
-
-
-# alex comment
-on va y arriver!
-
-
-rails db:{drop,migrate,seed}&&rails s
-
-rake db:drop
-rails db:create
-rails db:migrate

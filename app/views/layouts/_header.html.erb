@@ -7,13 +7,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="<%= root_path %>">Index</a>
-          </li>
           <% if user_signed_in? %>
-          <li class="nav-item">
-          <a class="nav-link" <%= link_to "Mon Panier", {controller: "carts", action: "show", id: current_user.id} %></a>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link mr-3" <%= link_to "Mon Panier", {controller: "carts", action: "show", id: current_user.id} %></a>
+            </li>
           <% end %>
           <div class="dropdown">
             <% if user_signed_in? %>
@@ -25,9 +22,12 @@
               <li class="dropdown-item"><%= link_to "Editer Profil", edit_user_registration_path %></li>
               <li><hr class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <% if current_user.admin == true %>
+                <li><hr class="dropdown-divider"></li>
+                <li class="dropdown-item"><%= link_to "My admin page", orders_path %></li>
+              <% end %>
               </ul>
-              
-              <% else %>
+            <% else %>
                 <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                   Get in
                 </button>

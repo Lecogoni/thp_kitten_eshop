@@ -19,7 +19,7 @@ class Product < ApplicationRecord
 
 
   #const pour :format des Product
-  FORMAT = %w{png gif jpg}
+  #FORMAT = %w{png gif jpg}
 
 
 end
