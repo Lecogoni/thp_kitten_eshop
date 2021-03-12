@@ -16,8 +16,8 @@
     <% @products.each do |product| %>
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-
           <div class="card-body">
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
             <h4 class="card-title"><a> <%= link_to product.title, product %></a></h4>
             <p class="card-text"><strong>Description : </strong><%= product.description %></p>
             <p class="card-text"><strong>Format : </strong> <%= product.format %></p>
