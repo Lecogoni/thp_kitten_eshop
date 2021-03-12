@@ -33,6 +33,24 @@ price: Faker::Number.decimal(l_digits: 2),
 format: 'jpg', 
 image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
 
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+
 
 
 admin = User.create(email: 'admin@yopmail.com', username: 'admin', password: '123456', admin: true)
