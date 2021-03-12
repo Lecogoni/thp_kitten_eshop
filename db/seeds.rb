@@ -37,19 +37,115 @@ Product.create(title: Faker::Creature::Cat.breed,
 description: Faker::Lorem.sentence(word_count: 10), 
 price: Faker::Number.decimal(l_digits: 2), 
 format: 'jpg', 
-image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+image_url: 'https://i.ytimg.com/vi/317jz-PU7Mg/maxresdefault.jpg')
 
 Product.create(title: Faker::Creature::Cat.breed,
 description: Faker::Lorem.sentence(word_count: 10), 
 price: Faker::Number.decimal(l_digits: 2), 
 format: 'jpg', 
-image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+image_url: 'https://i.ytimg.com/vi/G-uztKmgwoM/maxresdefault.jpg')
 
 Product.create(title: Faker::Creature::Cat.breed,
 description: Faker::Lorem.sentence(word_count: 10), 
 price: Faker::Number.decimal(l_digits: 2), 
 format: 'jpg', 
-image_url: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop')
+image_url: 'https://c.ndtvimg.com/2019-08/572rgsf_cat-receives-shock-funny-cat-pics_625x300_09_August_19.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://i.ytimg.com/vi/cXpkLwrx1Jo/maxresdefault.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://i.ytimg.com/vi/ZS8QwqD2bco/maxresdefault.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://www.top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-cover.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'http://static.demilked.com/wp-content/uploads/2019/11/5dde3b187defc-funny-spiderman-and-cats-adventures-thai-neung-fb4-png__700.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://static.boredpanda.com/blog/wp-content/uploads/2019/04/funny-dancing-cats-fb3.png')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://api.time.com/wp-content/uploads/2020/02/Catittude_Power_Ranking_Cattiest_Cats.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://filmdaily.co/wp-content/uploads/2020/07/if-it-fits-lede-1300x1123.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://i.ytimg.com/vi/kfToB7rmG5k/maxresdefault.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://wallpaperaccess.com/full/804014.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://thumbs.dreamstime.com/b/cute-funny-cat-medical-mask-lop-eared-176700030.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://ngolongtech.b-cdn.net/wp-content/uploads/2016/05/ngolongtech_Top-funny-cats-picture-1.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://cdn.slidesharecdn.com/ss_thumbnails/downloadfunnycatvideos-150906143836-lva1-app6891-thumbnail-4.jpg?cb=1441550352')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://ca-times.brightspotcdn.com/dims4/default/916e87e/2147483647/strip/true/crop/3840x2160+0+0/resize/840x473!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fcc%2F98%2Fba1a3544411bb9499edba0ac9656%2Fcat-nation-2-credit-tim-delmastro.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://thepetconcierge.com/wp-content/uploads/2015/09/cat-866537.jpg')
+
+Product.create(title: Faker::Creature::Cat.breed,
+description: Faker::Lorem.sentence(word_count: 10), 
+price: Faker::Number.decimal(l_digits: 2), 
+format: 'jpg', 
+image_url: 'https://i.imgflip.com/4kroiq.jpg')
+
+
+
+
+
+
 
 
 
